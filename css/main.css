@@ -244,7 +244,7 @@ h4 {
 	font-size: 1.125em;
 	line-height: 2.5em;
 }
-h5 {
+h5, ul {
 	 margin: 1.5em 0 0;
 	 font-family: 'Gabriola';
 	 font-size: 20px;
@@ -259,8 +259,9 @@ h6 {
 		font-size: 0.75em;
 }
 ul {
-	list-style: disc;
+	list-style-type: none;
 	margin: 1em;
+  padding: 0;
 }
 
 address {
@@ -870,6 +871,13 @@ footer h5 {
   width: 37%;
 }
 
+.mission-area .mission-intro-line {
+  text-transform: uppercase;
+  letter-spacing: .20em;
+  padding-bottom: 2em;
+  font-size: 1em;
+}
+
 .mission-area h3 {
   text-align: center;
   text-transform: uppercase;
@@ -946,6 +954,12 @@ footer h5 {
   align-items: center;
   flex-flow: row wrap;
   margin-bottom: 2.5em;
+}
+
+.service-packages .services-packages-summaries span {
+  font-size: .75em;
+  letter-spacing: .1em;
+  text-transform: lowercase;
 }
 
 /* Our Story */
@@ -1307,6 +1321,10 @@ header .site-title {
 
 /* Service Packages */
 
+.service-packages .services-packages-summaries {
+  align-items: flex-start;
+}
+
 .service-packages h1, .our-story h1 {
   margin-bottom: .875em;
 }
@@ -1325,7 +1343,11 @@ header .site-title {
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  flex-basis: 50%;
+  flex-basis: 35%;
+}
+
+.service-packages article {
+  margin: 1.875em auto;
 }
 
 .service-packages input[type=button] {
@@ -1336,7 +1358,7 @@ header .site-title {
 
 .stats {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-flow: row wrap;
   margin-bottom: 0;
@@ -1490,15 +1512,13 @@ footer input[type=button] {
 }
 
 body {
-  font-size: 18px;
-  font-size: 1.125em;
-  line-height: 1.333;
+  font-size: 16px;
+  font-size: 1em;
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
   font-size: 1em;
-  line-height: 1.333;
 }
 
 h1 {
@@ -1525,6 +1545,7 @@ ul {
 .container {
   background-size: 150%;
   background-position: 38% 3%;
+  min-height: auto;
 }
 
 header .site-title {
@@ -1580,6 +1601,15 @@ input[type=button] {
   line-height: 2.25em;
 }
 
+.mobile-break {
+  display: inline;
+}
+
+.mission-area .mission-intro-line {
+  letter-spacing: .25em;
+  padding-bottom: 2em;
+}
+
 .homepage-center-image {
   height: 550px;
 }
@@ -1615,18 +1645,20 @@ input[type=button] {
   padding: 0;
 }
 
-.service-packages h5 {
+.service-packages h5, .service-packages ul {
   text-align: left;
   padding: 0;
+  margin-left: 0;
   width: 90%;
-}
-
-.service-packages article, .testimonials article {
-  align-items: flex-start;
 }
 
 .service-packages input[type=button], .our-story input[type=button] {
   padding: 1.8625em 2em 2.7em 2em;
+}
+
+.service-packages .last-article {
+  align-self: flex-start;
+  margin-left: 4.5%;
 }
 
 /* Our Story */
@@ -1649,6 +1681,7 @@ input[type=button] {
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
+  flex-flow: row nowrap;
 }
 
 .stats h1 {
@@ -1698,6 +1731,10 @@ input[type=button] {
 
 .form {
   width: 70%;
+}
+
+aside .mobile-break {
+  display: none;
 }
 
 .alt-button {
