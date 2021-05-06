@@ -39,13 +39,20 @@
  <header>
    <div class="container">
 
+     <ul class="cb-slideshow">
+ 	      <li><span>Image 01</span></li>
+        <li><span>Image 02</span></li>
+        <li><span>Image 03</span></li>
+        <li><span>Image 04</span></li>
+      </ul>
+
      <div class="ant-header">
-       <div class="site-title">
-          <p>A Nice Touch Auto Detail</p>
-        </div>
+       <figure class="site-title">
+          <a href="#"><img src="img/ant-text-transparent.png" alt="A Nice Touch Auto Detail Wordmark"></a>
+        </figure>
 
         <figure class="ant-logo-main">
-          <a href="#"><img src="img/ant-logo.png" alt="ANT Auto Detail logo"></a>
+          <img src="img/ant-logo-clipped.png" alt="ANT Auto Detail logo">
         </figure>
       </div>
 
@@ -66,15 +73,15 @@
 
     <section class="hero-area">
       <div class="content-wrapper">
-        <h3>What We Do<br>Who We Are</h3>
+        <h3>Treat Your Car<br>To A Spa Day</h3>
         <div class="ant-button">
-          <input type="button" value="Services">
+          <a href="#service-packages">VIEW OUR SERVICES</a>
         </div>
       </div>
     </section>
 
     <div class="header-callouts">
-      <p>OUR SERVICES, SHORT LIST, QUICK CALLOUTS</p>
+      <p>LUXURY DETAILING STUDIO. CERAMIC COATING, PAINT CORRECTION, RESTORATION</p>
     </div>
   </div>
 </header>
@@ -88,13 +95,13 @@
           <img src="img/ant-logo.png" alt="ANT Auto Detail logo">
         </figure>
       </div>
-      <h3>Our Mission Statement</h3>
+      <h3>Educating clients, restoring vehicles, and providing long lasting results.</h3>
       <h4 class="mission-intro-line">You put your car through a lot, <br class="mobile-break">
         so why not treat your car to a spa day? <br></h4>
 
-      <h4> A Nice Touch Auto Detail, LLC is a luxury detail company that serves the greater New Haven area. Exposure to road grime, tree sap, bird droppings and other pollutants in the environment, deteriorate vehicle finishes. The best way to help prevent damage is with regular care and maintenance. Our interior and exterior spa packages will return your car like new condition. A Nice Touch Auto Detail, LLC has the expertise, training, and top of the line cleaning products to safely protect the finish of your vehicle and enhance the shine.<br class="mobile-break"> Leave the detailing to us!</h4>
+      <h4>Exposure to road grime, tree sap, bird droppings and other pollutants in the environment deteriorates vehicle finishes. The best way to help prevent damage is with regular care and maintenance. Our interior and exterior spa packages will return your car to like-new condition. A Nice Touch Auto Detail, LLC has the expertise, training, and top of the line cleaning products to safely protect the finish of your vehicle and enhance the shine.<br class="mobile-break"> Leave the detailing to us!</h4>
       <div class="ant-button">
-        <input type="button" value="Our Story">
+        <a href="#our-story">Our Story</a>
       </div>
     </div>
     <div class="homepage-center-image">
@@ -104,17 +111,16 @@
     </div>
     </section>
 
-    <section class="service-packages">
+    <section class="service-packages" id="service-packages">
      <div class="content-wrapper">
-       <h1>SPA INSPIRED PACKAGES</h1>
-       <p>Please contact us to set an appointment for a quote or services. </p>
+       <div class="service-packages-headers"><h1>SPA INSPIRED PACKAGES</h1></div>
       <div class="services-packages-summaries">
         <article>
           <h3>EXPRESS TOUCH EXTERIOR HAND WASH</h3>
           <h5>While you wait!</h5>
         </article>
         <article>
-          <h3>REFRESHING TOUCH EXTERIOR WASH + VACUUM – <br><span>(please plan to drop off car)</span></h3>
+          <h3>REFRESHING TOUCH EXTERIOR WASH + VACUUM<br><span>(please plan to drop off car)</span></h3>
           <ul>
             <li>- exterior hand wash</li>
             <li>- tire shine</li>
@@ -124,7 +130,7 @@
           </ul>
         </article>
         <article>
-          <h3>REFRESHING TOUCH INTERIOR CLEAN – <br><span>(please plan to drop off car)</span></h3>
+          <h3>REFRESHING TOUCH INTERIOR CLEAN<br><span>(please plan to drop off car)</span></h3>
           <ul>
             <li>- shampoo upholstery (for cloth interior)</li>
             <li>- leather condition treatment (if applicable)</li>
@@ -135,7 +141,7 @@
         <article>
           <h3>REJUVINATING TOUCH CARE PACKAGE – interior focus<br><span>(please plan to drop off car)</span></h3>
           <ul>
-            <li>includes exterior hand wash + tire shine</li>
+            <li>Includes exterior hand wash + tire shine</li>
             <li>- meticulous interior cleaning</li>
             <li>- interior vacuum</li>
             <li>- clean inside windows</li>
@@ -147,7 +153,7 @@
         <article>
           <h3>REJUVINATING TOUCH CARE PACKAGE – exterior focus<br><span>(please plan to drop off car)</span></h3>
           <ul>
-            <li>includes interior vacuum + clean inside windows</li>
+            <li>Includes interior vacuum + clean inside windows</li>
             <li>- meticulous exterior wash</li>
             <li>- restoration of rubber and plastic trims</li>
             <li>- wheels & rims cleaned + tire shine</li>
@@ -173,7 +179,7 @@
         </article>
       </div>
 
-      <h1>A LA CARTE</h1>
+      <div class="service-packages-headers"><h1>A LA CARTE - ADD-ONS</h1></div>
 
       <div class="services-packages-summaries">
         <article>
@@ -204,44 +210,66 @@
         <article>
           <h3>DOOR PILLAR RESTORATION</h3>
         </article>
-        <article class="last-article">
+        <article id="last-article">
           <h3>RIM SURFACE RESTORATION</h3>
           <h5>Restore rims to like new conditions from wear and tear due to road rash, knicks and scratches.</h5>
         </article>
       </div>
-
-      <div class="ant-button">
-        <input type="button" value="Book an Appointment">
+      <div class="ant-button" id="mission-button">
+        <a href="mailto:antdetail@gmail.com">SCHEDULE A FREE EVALUATION AND ESTIMATE</a>
       </div>
     </div>
   </section>
 
-  <!-- Add slideshow plugin code here -->
+  <!-- Add slideshow code here -->
+  <section class="slideshow">
+      <!--image slider start-->
+      <div class="css-slideshow">
+          <!--slide images start-->
+          <figure class="fade-in-image">
+            <img src="img/pickup-001.jpg" alt="Red Pickup Truck Side View">
+          </figure>
+          <figure class="fade-in-image">
+            <img src="img/engine-001.jpg" alt="Interior Engine View">
+          </figure>
+          <figure class="fade-in-image">
+            <img src="img/black-car-002.jpg" alt="Black Car Doors Open">
+          </figure>
+          <figure class="fade-in-image" id="logo-slide">
+            <img src="img/logo-slide.png" alt="A Nice Touch Logo Slide">
+          </figure>
+          <!--slide images end-->
+        </div>
+      <!--image slider end-->
+    </section>
 
-  <section class="our-story">
+
+  <!-- end of slideshow code -->
+
+  <section class="our-story" id="our-story">
    <div class="content-wrapper">
      <h1>Our Story</h1>
-     <p>SUMMARY OF HOW WE GOT STARTED. A HOOK ABOUT OUR EXPERTISE PLACEHOLDER TEXT.</p>
+     <p>Anthony Brown Jr. is living proof that dreams can turn into reality. Starting from his humble beginnings years ago cleaning cars in his parents driveway, he's turned a hobby into a career by taking the time to perfect his craft and establishing a growing business doing what he loves today.</p>
      <div class="stats">
         <article>
-          <h1>23</h1>
-         <h4>Fun stats</h4>
+          <h1>15</h1>
+         <h4>Years Detailing</h4>
         </article>
        <article>
-         <h1>7</h1>
-         <h4>That speak to</h4>
+         <h1>4</h1>
+         <h4>Years in Business</h4>
        </article>
       <article>
-         <h1>4</h1>
-         <h4>Our skills</h4>
+         <h1>293</h1>
+         <h4>Cars Interior Detailed</h4>
        </article>
        <article>
-         <h1>2906</h1>
-         <h4>And our expertise</h4>
+         <h1>302</h1>
+         <h4>Cars Exterior Detailed</h4>
        </article>
      </div>
      <div class="ant-button">
-       <input type="button" value="Show Me More">
+       <a href="about/index.html">Show Me More</a>
      </div>
    </div>
    </section>
@@ -251,7 +279,7 @@
 
   <section class="testimonials">
     <div class="content-wrapper">
-      <h1>From Our Clients</h1>
+      <h1>WHAT OUR CUSTOMERS<br>HAVE TO SAY</h1>
       <div class="testimonials-divider"></div>
       <article>
         <div class="rating-stars">
@@ -276,7 +304,7 @@
     <div class="form">
       <input type="email" name="email" value="Email Address">
       <div class="lets-connect-divider"></div>
-      <h4>Blurb to join mailing<br class="mobile-break"> list to get 10% off your first booking.</h4>
+      <h4>Get 10% off your next service by joining <br class="mobile-break">our mailing list!</h4>
       <div class="alt-button">
         <input type="button" value="Submit">
       </div>
@@ -349,6 +377,7 @@
             <a href="https://www.facebook.com/ANTAutoDetail/" target="_blank"><i class="fab fa-facebook-square"></i></a>
           </p>
         </div>
+        <p class="ten-percent-off">Get 10% off your next service by writing a review!</p>
       </div>
 
     </div> <!-- footer content ends -->
@@ -357,8 +386,7 @@
 
 
     <div class="copyright">
-      <h5>This is our copyright and disclaimer section.<br>
-        This is our unsubscribe link section.</h5>
+      <h5>&#169; A Nice Touch Auto Detail, LLC 2021</h5>
     </div>
  </footer>
 
@@ -369,6 +397,8 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+
+
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

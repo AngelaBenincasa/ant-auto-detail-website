@@ -176,6 +176,9 @@ body {
 	font-family: 'Eurostile', Arial, sans-serif;
 	font-weight: normal;
 	letter-spacing: 0.1em;
+  height: 100vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 header,
 footer,
@@ -244,11 +247,10 @@ h4 {
 	font-size: 1.125em;
 	line-height: 2.5em;
 }
-h5, ul {
+h5, article ul {
 	 margin: 1.5em 0 0;
-	 font-family: 'Gabriola';
-	 font-size: 20px;
-	 font-size: 1.25em;
+	 font-size: 16px;
+	 font-size: 1em;
 	 font-weight: lighter;
 	 line-height: 1.875em;
 	 text-transform: none;
@@ -260,7 +262,7 @@ h6 {
 }
 ul {
 	list-style-type: none;
-	margin: 1em;
+	margin: 1em auto;
   padding: 0;
 }
 
@@ -309,6 +311,23 @@ input[type="submit"] {
 a {
 	color: #fff;
   text-decoration: none;
+}
+
+.ant-button a {
+  width: 100%;
+  font: 700 .875em/3.5 'Eurostile', Arial, sans-serif;
+  border: 2px solid;
+  border-color: #fff;
+  border-radius: 0;
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  line-height: 1.75;
+  padding: 1.25em 1.875em 1.25em 1.875em;
+  margin: 3.6em 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 /*a:visited {
@@ -464,7 +483,7 @@ header {
   margin: 0;
 }
 
-.container {
+/*.container {
   width: 100%;
   height: auto;
   background: linear-gradient(
@@ -483,8 +502,115 @@ header {
   justify-content: space-between;
   padding: 1.25em 2.5em;
   overflow-x: hidden;
+}*/
+
+.container {
+  width: 100%;
+  height: auto;
+  min-height: 667px;
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 1.25em 2.5em;
+  overflow-x: hidden;
+}
+
+/*Header Slideshow Styles*/
+
+.cb-slideshow,
+.cb-slideshow:after {
+    position: absolute;
+    width: 100%;
+    min-height: 667px;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    margin: 0;
+    overflow: hidden;
 
 }
+.cb-slideshow:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.cb-slideshow li span {
+    width: 100%;
+    height: 667px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-size: cover;
+    background-position: 0% 0%;
+    background-repeat: none;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 1.25em 2.5em;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 0;
+    transform: scale(1.2);
+    animation: imageAnimation 24s linear infinite 0s;
+}
+
+.cb-slideshow li:nth-child(1) span {
+    background-image: url('../img/black-car-003.png');
+    animation-delay: 0s;
+}
+.cb-slideshow li:nth-child(2) span {
+    background-image: url('../img/white-car-004.jpg');
+    animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) span {
+    background-image: url('../img/pickup-001.jpg');
+    animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) span {
+    background-image: url('../img/gray-car-003.png');
+    animation-delay: 18s;
+  }
+
+@keyframes imageAnimation {
+    0% {
+      opacity: 0;
+      animation-timing-function: ease-in;
+    }
+    13% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    26% {
+      opacity: 1;
+    }
+    35% {
+      opacity: 0;
+      transform: scale3d(1.25, 1.25, 1.25) translate3d(-115px, 0px, 0px);
+    }
+    100% {
+      opacity: 0;
+      transform: scale3d(1.25, 1.25, 1.25) translate3d(-115px, 0px, 0px);
+    }
+
+    .no-cssanimations .cb-slideshow li span {
+    	opacity: 1;
+    }
+
+}
+
+.no-cssanimations .cb-slideshow li span{
+	opacity: 1;
+}
+
+/*end Header Slideshow styles*/
+
 
 nav {
   width: 90%
@@ -622,13 +748,16 @@ nav {
 }
 
 .ant-header .ant-logo-main {
-    width: 40%;
+    width: 30%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
     order: 2;
+    margin-top: 2.5em;
+    max-width: 100px;
+    z-index: 2;
 }
 
 header .ant-header {
@@ -637,26 +766,21 @@ header .ant-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: row wrap;
   text-transform: uppercase;
   order: 1;
   margin-left: 0.1em;
   margin-right: -0.1em;
 }
 
-.site-title {
-  width: 100%;
+.site-title a {
+  width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
-  text-transform: uppercase;
+  margin: 0 auto;
 }
 
-.site-title p {
-  font-weight: bold;
-  font-size: 0.875em;
-  text-align: center;
+.site-title img {
+  display: flex;
+  align-self: flex-start;
 }
 /*.header-divider {
   background: #3a3a3a;
@@ -688,6 +812,7 @@ header nav ul {
   width: 100%;
   margin: 0;
   order:3;
+  z-index: 2;
 }
 
   header .content-wrapper {
@@ -699,12 +824,14 @@ header nav ul {
 .hero-area h3 {
   text-transform: uppercase;
   margin: 3.75em 0 3.75em 0;
+  text-align: center;
 }
 
 .header-callouts {
   order: 4;
   text-align: center;
   font-size: .75em;
+  z-index: 2;
 }
 
 /* Footer */
@@ -838,6 +965,14 @@ footer input[type=button] {
   margin: 0;
 }
 
+.ten-percent-off {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB0404;
+  border: 2px solid #fff;
+  padding: 0.6em 1em;
+}
+
 .copyright-divider {
     width: 100%;
     height: 2px;
@@ -868,7 +1003,7 @@ footer h5 {
 }
 
 .ant-logo-mission {
-  width: 37%;
+  width: 40%;
 }
 
 .mission-area .mission-intro-line {
@@ -881,18 +1016,31 @@ footer h5 {
 .mission-area h3 {
   text-align: center;
   text-transform: uppercase;
-  width: 50%;
+  width: 75%;
   padding: 2.28em 0;
+  font-size: 1.25em;
 }
 
 .mission-area h4 {
   text-align: center;
   width: 75%;
   line-height: 2.5em;
+  font-size: 1em;
 }
 
 .mission-area .ant-button {
   padding-top: 3.125em;
+}
+
+#mission-button input {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  white-space: normal;
+  height: auto;
+  line-height: 1.75em;
+  padding: 1em;
+
 }
 
 .homepage-center-image {
@@ -913,17 +1061,41 @@ footer h5 {
 
 /* Service Packages */
 
-.service-packages, .our-story, .testimonials, .lets-connect {
+/*.service-packages, .our-story, .testimonials, .lets-connect {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
+}*/
+
+.service-packages, .service-packages-headers h1 {
+  width: 90%;
+  margin: 0 auto;
 }
 
-.service-packages h1, .our-story h1 {
+.service-packages .services-packages-summaries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 0 auto 2.5em auto;
+  width: 90%;
+}
+
+.service-packages-headers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 0 auto;
+}
+
+.service-packages h1 {
   color: #FB0404;
   margin-bottom: 1.25em;
   text-align: center;
+  font-size: 35px;
+  font-size: 2.1875em;
 }
 
 .service-packages p, .our-story p {
@@ -936,25 +1108,19 @@ footer h5 {
 }
 
 .service-packages article {
-  width: 75%;
   margin: 1.875em 0;
   text-align: center;
 }
 
 .service-packages h3 {
   text-transform: uppercase;
+  font-size: 1.25em;
 }
 
 .service-packages h5 {
   padding: 0 1.5625em;
 }
-.service-packages .services-packages-summaries {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
-  margin-bottom: 2.5em;
-}
+
 
 .service-packages .services-packages-summaries span {
   font-size: .75em;
@@ -962,7 +1128,20 @@ footer h5 {
   text-transform: lowercase;
 }
 
+article ul {
+	margin: 1em;
+  padding: 0;
+}
+
+
 /* Our Story */
+
+
+.our-story h1 {
+  color: #FB0404;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
 
 .our-story p {
   margin-bottom: 3.125em;
@@ -975,6 +1154,7 @@ footer h5 {
 .stats h1 {
   color: #5D5D5D;
   padding-bottom: 0;
+  margin-bottom: .25em;
   font-size: 60px;
   font-size: 3.75em;
   line-height: normal;
@@ -1069,6 +1249,7 @@ aside {
 
 .lets-connect .content-wrapper {
   padding-top: 5em;
+  background-color: #fff;
 }
 
 aside .form {
@@ -1094,6 +1275,7 @@ aside h1 {
   text-align: center;
   padding: 0;
   font-size: 1.375em;
+  border: none;
 }
 
 .lets-connect-divider {
@@ -1120,10 +1302,126 @@ aside .alt-button input {
   padding-bottom: 2.6em;
 }
 
+/*Homepage Slideshow Styles*/
+
+
+.css-slideshow {
+  position: relative;
+  max-width: 80%;
+  max-height: 200px;
+  overflow: hidden;
+  margin: 1.5625em auto 0 auto;
+}
+
+.css-slideshow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.css-slideshow figure {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background: #000;
+  float: left;
+  margin-left: -100%;
+  transform: translateX(100%);
+  opacity:0;
+  animation: xfade 20s linear infinite;
+}
+
+.css-slideshow img {
+  width: 100%;
+  height: auto;
+}
+
+#logo-slide {
+  transform: translate3d(100%, -5%, 0);
+}
+
+figure:nth-child(1) {
+  animation-delay: 0s;
+}
+figure:nth-child(2) {
+  animation-delay: 5s;
+}
+figure:nth-child(3) {
+  animation-delay: 10s;
+}
+figure:nth-child(4) {
+  animation-delay: 15s;
+}
+
+@keyframes xfade {
+  0%{
+    opacity: 0;
+  }
+  13% {
+    opacity: 1;
+  }
+  26%{
+    opacity: 1;
+  }
+  36% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.no-cssanimations .css-slideshow figure {
+	opacity: 1;
+}
+
 /* ==========================================================================
-   About Page
+   Services Page
    ========================================================================== */
 
+   /* Header */
+
+#services-page-container {
+     width: 100%;
+     height: auto;
+     background: linear-gradient(
+       rgba(0, 0, 0, 0.6),
+       rgba(0, 0, 0, 0.6),
+       rgba(0, 0, 0, 0.6)
+       ),
+       url('../img/engine-002.jpg')center no-repeat;
+     background-size: cover;
+     background-position: 49% 33%;
+     min-height: 667px;
+     display: flex;
+     align-items: center;
+     flex-flow: column wrap;
+     justify-content: space-between;
+     padding: 1.25em 2.5em;
+     overflow-x: hidden;
+   }
+
+  .hero-area-sub-page {
+     display: flex;
+     flex-flow: row wrap;
+     order: 3;
+   }
+
+  .hero-area-sub-page h4 {
+    font-weight: normal;
+  }
+
+  .service-packages .services-h1 {
+    color: #fff;
+  }
+
+  .mobile-image-container {
+    height: 366px;
+  }
+
+  .mobile-image-container img {
+    object-fit: cover;
+  }
+  }
 
 /* ==========================================================================
    FAQ Page
@@ -1224,11 +1522,6 @@ aside .alt-button input {
 
   /* General styles */
 
-.content-wrapper {
-  max-width: 640px;
-  /*margin: 100px 0;*/
-}
-
 input[type=button] {
   font-size: 14px;
   font-size: 0.875em;
@@ -1251,19 +1544,22 @@ header .ant-header {
 .ant-header .ant-logo-main {
   width: 15%;
   order: 1;
+  margin: 1em 1em;
 }
 
 header .site-title {
   position: absolute;
   width: auto;
   order: 2;
-  left: 50%;
-  top: 5.5%;
+  left: 52%;
+  top: 6%;
   transform: translate(-50%);
 }
 
-.site-title p {
-  margin: 0;
+.site-title img {
+  margin: 0 auto;
+  width: 100%;
+
 }
 
 .hamburger-menu {
@@ -1273,6 +1569,7 @@ header .site-title {
 
 .navbar {
   justify-content: center;
+  z-index: 3;
 }
 
 .hero-area {
@@ -1299,7 +1596,7 @@ header .site-title {
 /* Mission Area */
 
 .ant-logo-mission {
-  width: 22%;
+  width: 33%;
 }
 
 .mission-area h3 {
@@ -1343,15 +1640,32 @@ header .site-title {
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  flex-basis: 35%;
+  flex-basis: 38%;
 }
 
 .service-packages article {
   margin: 1.875em auto;
 }
 
+#last-article {
+  flex-basis: 50%;
+}
+
 .service-packages input[type=button] {
   padding: 1.8625em 5em 2.7em 5em;
+}
+
+/* Homepage Slideshow */
+
+.css-slideshow {
+  max-width: 80%;
+  max-height: 400px;
+  overflow: hidden;
+  margin: 6.5625em auto 5em auto;
+}
+
+#logo-slide {
+  transform: translate3d(100%, -4%, 0);
 }
 
 /* Our Story */
@@ -1365,7 +1679,7 @@ header .site-title {
 }
 
 .stats h1 {
-  padding-bottom: 0;
+  margin-bottom: .25em;
 }
 
 .stats article {
@@ -1381,6 +1695,10 @@ header .site-title {
 
 .testimonials-divider {
   width: 23%;
+}
+
+.testimonials h1 {
+  width: 80%;
 }
 
 .testimonials h2 {
@@ -1493,6 +1811,10 @@ footer input[type=button] {
   margin-left: auto;
 }
 
+.ten-percent-off {
+  margin-top: 4em;
+}
+
 /* ==========================================================================
    About Page
    ========================================================================== */
@@ -1502,13 +1824,32 @@ footer input[type=button] {
     FAQ Page
    ========================================================================== */
 
+@media only screen and (min-width: 1024px) {
+/*iPad Pro styles here*/
+
+/* Homepage Slideshow */
+
+.css-slideshow {
+  max-width: 80%;
+  max-height: 500px;
+  overflow: hidden;
+  margin: 6.5625em auto 5em auto;
+}
+
+#logo-slide {
+  transform: translate3d(100%, -12%, 0);
+}
+
+}
+
+
 @media only screen and (min-width: 1200px) {
 
 /*Desktop styles here*/
 
 .content-wrapper {
   max-width: 960px;
-  margin: 3.125em 0;
+  margin: 3.125em auto;
 }
 
 body {
@@ -1522,8 +1863,8 @@ p {
 }
 
 h1 {
-  font-size: 60px;
-  font-size: 3.33em;
+  font-size: 40px;
+  font-size: 2.5em;
 }
 
 h3 {
@@ -1548,13 +1889,18 @@ ul {
   min-height: auto;
 }
 
-header .site-title {
-  width: 40%%;
-  order: 2;
+.cb-slideshow,
+.cb-slideshow:after, .cb-slideshow li span {
+  min-height: 841px;
 }
 
-.site-title p {
-  font-size: 1em;
+header .site-title {
+  top: 5%;
+}
+
+header .site-title a {
+  order: 2;
+  margin: 0 auto;
 }
 
 .navbar {
@@ -1592,10 +1938,6 @@ input[type=button] {
 
 /* Mission Area */
 
-.ant-logo-mission {
-  width: 15%;
-}
-
 .mission-area h4 {
   width: 85%;
   line-height: 2.25em;
@@ -1615,6 +1957,7 @@ input[type=button] {
 }
 
 /* Service Packages */
+
 
 .service-packages h1 {
   margin-bottom: .5em;
@@ -1636,8 +1979,8 @@ input[type=button] {
 
 .service-packages h3 {
   width: 90%;
-  font-size: 30px;
-  font-size: 1.66em;
+  font-size: 22px;
+  font-size: 1.23em;
 }
 
 .service-packages h3, .service-packages h5 {
@@ -1656,16 +1999,28 @@ input[type=button] {
   padding: 1.8625em 2em 2.7em 2em;
 }
 
-.service-packages .last-article {
+#last-article {
   align-self: flex-start;
   margin-left: 4.5%;
+}
+
+/* Homepage Slideshow */
+
+.css-slideshow {
+  max-width: 60%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+#logo-slide {
+  transform: translate3d(100%, -14%, 0);
 }
 
 /* Our Story */
 
 .our-story .content-wrapper {
   padding: 2.77em 0;
-  margin: 5.55em 0;
+  margin: 5.55em auto;
 }
 
 .our-story h1 {
@@ -1686,8 +2041,8 @@ input[type=button] {
 
 .stats h1 {
   margin-bottom: .2em;
-  font-size: 60px;
-  font-size: 3.33em;
+  font-size: 40px;
+  font-size: 2.5em;
 }
 
 .stats h4 {
@@ -1711,15 +2066,16 @@ input[type=button] {
 
 .testimonials h1 {
   margin-bottom: 1.25em;
+  line-height: 1.75em;
 }
 
 .rating-stars i {
-  font-size: 2.625em;
+  font-size: 2em;
 }
 
 .testimonials h2 {
-  font-size: 40px;
-  font-size: 2.22em;
+  font-size: 30px;
+  font-size: 1.67em;
 }
 
 .testimonials p {
@@ -1747,7 +2103,7 @@ aside .mobile-break {
 footer .content-wrapper {
   max-width: 1200px;
   padding: 0;
-  margin: 5.55em 0 2.77em 0;
+  margin: 5.55em auto 2.77em auto;
 }
 
 .footer-content {
@@ -1798,7 +2154,7 @@ footer h3 {
 
 footer h4, .footer-hours h4, .footer-form input, textarea  {
   font-size: 14px;
-  font-size: .77em;
+  font-size: .875em;
   line-height: 3em;
 }
 
@@ -1806,11 +2162,15 @@ footer h4, .footer-hours h4, .footer-form input, textarea  {
   margin-bottom: 0;
 }
 
-footer .social-icons {
+.ten-percent-off {
   order: 2;
+  margin: 2em auto .75em auto;
+}
+
+footer .social-icons {
+  order: 3;
   width: 80%;
   margin: 0 auto;
-  padding-top: 2.77em;
 }
 
 .social-icons p {
