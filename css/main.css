@@ -535,14 +535,14 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    height: auto;
+    min-height: 668px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 0;
 }
 
 .cb-slideshow li span {
-    width: 100%;
+    width: 120%;
     height: 667px;
     position: absolute;
     top: 0px;
@@ -643,23 +643,12 @@ nav {
   padding-top: 3.125em;
   transition: right 0.8s cubic-bezier(1, 0, 0, 1);
   overflow-x: hidden;
+  z-index: 3;
 }
 
 .change {
   right: 0;
 }
-
-/*.hamburger-menu {
-  width: 35px;
-  height: 1.875em;
-  position: fixed;
-  top: 50px;
-  right: 50px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}*/
 
 .hamburger-menu {
   width: 2.1875em;
@@ -671,7 +660,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  z-index: 3;
+  z-index: 4;
 }
 
 .line {
@@ -679,6 +668,7 @@ nav {
   height: 2px;
   background-color: #fff;
   transition: all 0.6s;
+  z-index: 3;
 }
 
 .change .line-1 {
@@ -781,6 +771,7 @@ header .ant-header {
 .site-title img {
   display: flex;
   align-self: flex-start;
+  z-index: 2;
 }
 /*.header-divider {
   background: #3a3a3a;
@@ -896,7 +887,7 @@ address h4, .footer-hours h4 {
   margin: 0.9375em 0 0.3125em 0;
 }
 
-footer .social-icons {
+footer .social-icons, footer .services-social-icons {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -914,7 +905,7 @@ footer .social-icons {
   align-items: center;
   }*/
 
-footer .social-icons a {
+footer .social-icons a, footer .services-social-icons a {
   font-size: 3em;
   color: #FB0404;
 }
@@ -1075,8 +1066,8 @@ footer h5 {
 
 .service-packages .services-packages-summaries {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-flow: row wrap;
   margin: 0 auto 2.5em auto;
   width: 90%;
@@ -1117,11 +1108,6 @@ footer h5 {
   font-size: 1.25em;
 }
 
-.service-packages h5 {
-  padding: 0 1.5625em;
-}
-
-
 .service-packages .services-packages-summaries span {
   font-size: .75em;
   letter-spacing: .1em;
@@ -1129,7 +1115,7 @@ footer h5 {
 }
 
 article ul {
-	margin: 1em;
+	margin: 1em 1em 1em 0;
   padding: 0;
 }
 
@@ -1390,7 +1376,7 @@ figure:nth-child(4) {
        ),
        url('../img/engine-002.jpg')center no-repeat;
      background-size: cover;
-     background-position: 49% 33%;
+     background-position: 53% 33%;
      min-height: 667px;
      display: flex;
      align-items: center;
@@ -1408,19 +1394,126 @@ figure:nth-child(4) {
 
   .hero-area-sub-page h4 {
     font-weight: normal;
+    line-height: 2em;
   }
 
-  .service-packages .services-h1 {
-    color: #fff;
+    /* Spa Inspired Packages */
+
+  #service-packages-services-page {
+    width: 90%;
   }
 
-  .mobile-image-container {
-    height: 366px;
+  #service-packages-services-page .content-wrapper {
+    padding-top: 0;
   }
 
-  .mobile-image-container img {
+  .services-divider {
+    width: 60%;
+    height: 2px;
+    background-color: #FB0404;
+    margin-bottom: 6.25em;
+  }
+
+  #service-packages-services-page article, services-social-icons article {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
+  #service-packages-services-page article {
+    margin: 0 auto 6.25em auto;
+  }
+
+  #packages-summaries-services-page article {
+    margin: 0 auto 5.5em auto;
+  }
+
+  .service-package-image-container {
+    max-width: 90%;
+    max-height: 363px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto 3em auto;
+  }
+
+  .service-package-image img {
     object-fit: cover;
+    object-position: center;
+    width: auto;
+    min-height: 375px;
+    display: block;
   }
+
+  #image-position-top-left img {
+    object-position: left top;
+  }
+
+  .services-text {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .spa-service-packages h1 {
+    font-size: 35px;
+    font-size: 2.1875em;
+    line-height: 1.5em;
+    margin-bottom: .5em;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  #spa-header h1, #add-ons-header h1 {
+    color: #fff;
+    width: 60%;
+    padding-bottom: 2.5em;
+    margin: 0 auto;
+  }
+
+  .services-text h3 {
+    line-height: 1.75em;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 1em auto;
+  }
+
+  .services-text h5, .services-text ul {
+    text-align: center;
+    margin: 1em auto 0 auto;
+  }
+
+  h5.car-dropoff-note {
+    margin-top: 0;
+  }
+
+  .bold-list-item {
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  #packages-summaries-services-page h3 {
+    margin-top: 0;
+  }
+
+  #mission-button {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  article#last-services-page-article{
+    margin-bottom: 3em;
+  }
+
+  footer .social-icons, footer .services-social-icons {
+    margin-bottom: 0;
+    margin-top: 1em;
+  }
+
+ #services-page-footer.content-wrapper {
+    padding-bottom: 0;
   }
 
 /* ==========================================================================
@@ -1512,8 +1605,8 @@ figure:nth-child(4) {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
+   Media Queries for Responsive Design.
+   These styles override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
@@ -1536,6 +1629,19 @@ input[type=button] {
   min-height: 1024px;
 }
 
+.cb-slideshow, .cb-slideshow:after, .cb-slideshow li span {
+  min-height: 1024px;
+}
+
+.cb-slideshow:after {
+  min-height: 1025px;
+}
+
+.cb-slideshow li span {
+    width: 110%;
+}
+
+
 header .ant-header {
   flex-direction: row;
   justify-content: flex-start;
@@ -1544,7 +1650,7 @@ header .ant-header {
 .ant-header .ant-logo-main {
   width: 15%;
   order: 1;
-  margin: 1em 1em;
+  margin: 1em 0;
 }
 
 header .site-title {
@@ -1616,6 +1722,10 @@ header .site-title {
   margin: 2.56em 0;
 }
 
+#mission-button {
+  width: 50%;
+}
+
 /* Service Packages */
 
 .service-packages .services-packages-summaries {
@@ -1648,7 +1758,7 @@ header .site-title {
 }
 
 #last-article {
-  flex-basis: 50%;
+  margin-left: 6%;
 }
 
 .service-packages input[type=button] {
@@ -1661,7 +1771,7 @@ header .site-title {
   max-width: 80%;
   max-height: 400px;
   overflow: hidden;
-  margin: 6.5625em auto 5em auto;
+  margin: 6.5625em auto 4em auto;
 }
 
 #logo-slide {
@@ -1777,6 +1887,11 @@ footer .content-wrapper {
   margin: 0 auto;
   padding: 0 0.5em;
   width: 48%;
+  min-height: 564px;
+}
+
+.footer-column-two {
+  justify-content: flex-start;
 }
 
 .footer-column-three {
@@ -1785,9 +1900,22 @@ footer .content-wrapper {
 
 .ant-logo-footer {
   width: 65%;
+  margin-bottom: 5em;
 }
 
-.social-icons p {
+.footer-address {
+  margin-bottom: 3em;
+}
+
+.footer-divider {
+  margin: 1.5em 0;
+}
+
+footer .social-icons, footer .services-social-icons {
+  width: 80%;
+}
+
+.social-icons p, .services-social-icons p {
   font-size: 1.5em;
 }
 
@@ -1812,8 +1940,114 @@ footer input[type=button] {
 }
 
 .ten-percent-off {
-  margin-top: 4em;
+  margin-top: 5em;
 }
+
+
+/* ==========================================================================
+   Services Page
+   ========================================================================== */
+
+   #services-page-container {
+     min-height: 1022px;
+     padding: 1.25em 4em;
+   }
+
+   #service-packages-services-page .content-wrapper {
+     padding-bottom: 6.25em;
+   }
+
+   .hero-area-sub-page {
+     padding-bottom: 6.4375em;
+   }
+
+   .hero-area-sub-page h4 {
+     font-size: 30px;
+     font-size: 1.67em;
+     width: 90%;
+   }
+
+   #spa-header h1,  #add-ons-header h1 {
+     padding-bottom: 1em;
+     text-align: center;
+   }
+
+   #spa-header h1 {
+     padding-top: 1.75em;
+   }
+
+   .services-divider {
+     margin-bottom: 10em;
+   }
+
+   #service-packages-services-page article {
+     flex-flow: row wrap;
+     justify-content: space-between;
+     align-items: flex-start;
+     width: 90%;
+     margin-bottom: 10em;
+   }
+
+   .service-package-image-container, .services-text {
+     margin: 0;
+   }
+
+   .service-package-image-container {
+     width: 45%;
+     margin-top: .75em;
+   }
+
+   .services-text {
+     width: 50%;
+     padding: 0 1em;
+   }
+
+   .text-left-of-image .service-package-image-container {
+     order: 1;
+   }
+
+   .text-left-of-image .services-text  {
+     align-items: flex-start;
+   }
+
+   .text-right-of-image .services-text  {
+     padding: 0 0 0 1.75em;
+     align-items: flex-start;
+   }
+
+   .service-package-image img {
+     min-height: 375px;
+   }
+
+   .spa-service-packages h1, .services-text h3, .services-text h5, .services-text ul {
+     text-align: left;
+     margin-left: 0;
+   }
+
+   .services-text h5, .services-text ul {
+     margin: 1em 0 0 0;
+   }
+
+   #packages-summaries-services-page {
+     display: flex;
+     flex-flow: row wrap;
+     width: 90%;
+   }
+
+   #packages-summaries-services-page article {
+     width: 45%;
+     margin-bottom: 6.25em;
+   }
+
+   #packages-summaries-services-page .services-text {
+     width: 100%;
+   }
+
+   #packages-summaries-services-page .services-text h3, #packages-summaries-services-page .services-text h5 {
+     text-align: center;
+   }
+
+
 
 /* ==========================================================================
    About Page
@@ -1823,6 +2057,10 @@ footer input[type=button] {
 /* ==========================================================================
     FAQ Page
    ========================================================================== */
+
+
+}
+
 
 @media only screen and (min-width: 1024px) {
 /*iPad Pro styles here*/
@@ -1894,6 +2132,11 @@ ul {
   min-height: 841px;
 }
 
+
+.cb-slideshow li span {
+    width: 100%;
+}
+
 header .site-title {
   top: 5%;
 }
@@ -1938,6 +2181,9 @@ input[type=button] {
 
 /* Mission Area */
 
+.ant-logo-mission {
+    width: 25%;
+}
 .mission-area h4 {
   width: 85%;
   line-height: 2.25em;
@@ -2139,10 +2385,6 @@ footer .content-wrapper {
   margin-bottom: 0;
 }
 
-.footer-divider {
-  margin: 1.5em 0;
-}
-
 footer h3 {
   font-size: 22px;
   font-size: 1.22em;
@@ -2167,13 +2409,13 @@ footer h4, .footer-hours h4, .footer-form input, textarea  {
   margin: 2em auto .75em auto;
 }
 
-footer .social-icons {
+footer .social-icons, footer .services-social-icons {
   order: 3;
   width: 80%;
   margin: 0 auto;
 }
 
-.social-icons p {
+.social-icons p, .services-social-icons p {
   font-size: 1em;
 }
 
@@ -2191,9 +2433,130 @@ footer h5 {
 
 
 
+
 /* ==========================================================================
-   About Page
+   Services Page
    ========================================================================== */
+
+   #services-page-container {
+     padding: 2.5em 5em;
+     min-height: 871px;
+   }
+
+    .hero-area-sub-page h1 {
+      width: 100%;
+      font-size: 50px;
+      font-size: 3.125em;
+    }
+
+    .hero-area-sub-page h4 {
+      width: 50%;
+    }
+
+
+    #spa-header h1, #add-ons-header h1 {
+      width: 100%;
+    }
+
+    .services-divider {
+      margin-bottom: 8em;
+    }
+
+    #services-page-content-wrapper {
+      max-width: 1200px;
+      width: 90%;
+    }
+
+    #service-packages-services-page {
+      width: 100%;
+    }
+
+    #service-packages-services-page .content-wrapper {
+      width: 100%;
+      max-width: inherit;
+    }
+
+   #packages-summaries-services-page {
+     width: 70%;
+   }
+
+
+   #packages-summaries-services-page article {
+     width: 35%;
+   }
+
+   .service-package-image-container {
+     max-height: 600px;
+   }
+
+   .service-package-image img {
+     min-height: 600px;
+   }
+
+   #packages-summaries-services-page .services-text {
+     width: 90%;
+     padding: 0;
+   }
+
+   .text-right-of-image .services-text  {
+     padding: 0 0 0 5em;
+   }
+
+
+   #packages-summaries-services-page article.services-text-right {
+    justify-content: flex-end;
+    }
+
+   #packages-summaries-services-page .services-text h3, #packages-summaries-services-page .services-text h5 {
+     text-align: left;
+     align-items: flex-start;
+   }
+
+   #mission-button {
+     width: 60%;
+   }
+
+   #mission-button.ant-button a {
+     justify-content: center;
+     width: 50%;
+   }
+
+   .gift-up-target {
+     width: 33%;
+     margin: 0 auto;
+   }
+
+   #services-page-footer .footer-column-one {
+     margin-left: 2em;
+   }
+
+   #services-page-footer .ant-logo-footer {
+     width: 90%;
+   }
+
+   #services-page-footer .footer-column-two {
+     margin-right: 2.5em;
+     margin-left: 2em;
+     flex-basis: 33%;
+   }
+
+   #services-page-footer .footer-column-three {
+     flex-basis: 33%;
+   }
+
+   #packages-summaries-services-page footer .social-icons, footer .services-social-icons {
+     width: 100%;
+     margin: 0;
+     justify-content: flex-start;
+   }
+
+   #services-page-footer .social-icons p, .services-social-icons p {
+     margin-right: 20%;
+   }
+
+   .ten-percent-off {
+     margin-top: 0;
+   }
 
 
 /* ==========================================================================
@@ -2201,6 +2564,9 @@ footer h5 {
    ========================================================================== */
 
 
+
+
+}
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
