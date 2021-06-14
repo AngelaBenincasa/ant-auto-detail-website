@@ -1170,9 +1170,14 @@ article ul {
     url('../img/engine-002.jpg')center no-repeat;
   background-size: cover;
   background-position: 53% 47%;
-  min-height: 875px;
+  min-height: 1225px;
   padding: 0 2.5em 3.125em 2.5em;
   overflow-x: hidden;
+  position: relative;
+}
+
+.testimonials .content-wrapper {
+  padding-bottom: 0;
 }
 
 .testimonials .rating-stars {
@@ -1210,15 +1215,82 @@ article ul {
 }
 .testimonials h2 {
   width: 80%;
-  margin: 1.34em 0;
+  margin: 1.34em auto;
   text-align: center;
   text-transform: uppercase;
-  font-size: 1.875em;
+  font-size: 1.25em;
 }
 
 .testimonials p {
   text-align: center;
   margin: 0;
+}
+
+
+/* Slides */
+article.testimonialQuote {
+  text-align: center;
+}
+
+#slideshow-arrows {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  position: absolute;
+  top: 28.125em;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  width: auto;
+  margin-top: -1.875em;
+  padding: 1em;
+  color: #888;
+  font-weight: bold;
+  font-size: 1.25em;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: relative;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  margin: 3em auto 0 auto;
+  position: absolute;
+  bottom: 5em;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 .5em;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
 }
 
 /* Aside */
@@ -1745,7 +1817,7 @@ header .site-title {
   margin-top: .7em;
 }
 
-.service-packages article, .our-story article, .testimonials article {
+.service-packages article, .our-story article {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1800,7 +1872,7 @@ header .site-title {
 
 .testimonials {
   justify-content: flex-start;
-  min-height: 760px;
+  min-height: 960px;
 }
 
 .testimonials-divider {
@@ -1812,7 +1884,8 @@ header .site-title {
 }
 
 .testimonials h2 {
-  margin: 1.5em 0;
+  margin: 1.75em auto;
+  font-size: 1.875em;
 }
 
 .testimonials article {
@@ -1821,6 +1894,25 @@ header .site-title {
 
 .testimonials p {
   line-height: 2em;
+}
+
+/* Slides */
+
+
+article.testimonialQuote {
+  width: 80%;
+}
+
+.testimonials h2 {
+  margin: 1.25em auto;
+}
+
+#slideshow-arrows {
+  top: 26em;
+}
+
+.prev, .next {
+  font-size: 2.5em;
 }
 
 /* Aside */
@@ -2078,6 +2170,12 @@ footer input[type=button] {
   transform: translate3d(100%, -12%, 0);
 }
 
+/* Slides */
+
+.testimonials {
+  min-height: 900px;
+}
+
 }
 
 
@@ -2327,6 +2425,25 @@ input[type=button] {
 .testimonials p {
   font-size: 22px;
   font-size: 1.22em;
+}
+
+/* Slides */
+
+.testimonials {
+  min-height: 1000px;
+}
+
+#slideshow-arrows {
+  width: 80%;
+  top: 27em;
+}
+
+.prev, .next {
+  font-size: 3em;
+}
+
+.testimonials h2 {
+  font-size: 2em;
 }
 
 /* Aside */
