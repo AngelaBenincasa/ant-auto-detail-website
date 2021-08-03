@@ -289,7 +289,8 @@ input {
 	vertical-align: middle;
 }
 input[type=button],
-input[type="submit"] {
+input[type="submit"],
+.footer-form button {
 	font: 700 .875em/3.5 'Eurostile', Arial, sans-serif;
 	color: #fff;
 	background: #000;
@@ -299,7 +300,8 @@ input[type="submit"] {
 button,
 html input[type=button],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.footer-form button {
 	cursor: pointer;
 }
 .is-style-outline>.wp-block-button__link:not(.has-text-color), .wp-block-button__link.is-style-outline:not(.has-text-color){
@@ -353,7 +355,8 @@ a:active {
 button,
 input[type=button],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.footer-form button {
 	border: 2px solid;
 	border-color: #fff;
 	border-radius: 0;
@@ -367,7 +370,7 @@ input[type="submit"] {
 button:hover,
 input[type=button]:hover,
 input[type="reset"]:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,{
 	border-color: #000000;
 }
 
@@ -441,9 +444,9 @@ input[type=text] {
   width: 100%;
 }
 
-input[type=button] {
+input[type=button], .footer-form button {
   width: 100%;
-  padding: 1.25em 1.875em 2.1875em 1.875em;
+  padding: 1.25em 1.875em 1.25em 1.875em;
   margin: 3.6em 0;
   background-color: transparent;
   font-weight: 500;
@@ -482,27 +485,6 @@ header {
   padding: 0;
   margin: 0;
 }
-
-/*.container {
-  width: 100%;
-  height: auto;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.6)
-    ),
-    url('../img/black-car-002.jpg')center no-repeat;
-  background-size: cover;
-  background-position: 49% 33%;
-  background-size: 400%;
-  min-height: 667px;
-  display: flex;
-  align-items: center;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  padding: 1.25em 2.5em;
-  overflow-x: hidden;
-}*/
 
 .container {
   width: 100%;
@@ -548,7 +530,7 @@ header {
     top: 0px;
     left: 0px;
     background-size: cover;
-    background-position: 0% 0%;
+    background-position: 50% 0%;
     background-repeat: none;
     color: transparent;
     display: flex;
@@ -562,19 +544,19 @@ header {
 }
 
 .cb-slideshow li:nth-child(1) span {
-    background-image: url('../img/black-car-003.png');
+    background-image: url('../img/red-car-side-view-crop.jpg');
     animation-delay: 0s;
 }
 .cb-slideshow li:nth-child(2) span {
-    background-image: url('../img/white-car-004.jpg');
+    background-image: url('../img/yellow-car-side-view-crop.jpg');
     animation-delay: 6s;
 }
 .cb-slideshow li:nth-child(3) span {
-    background-image: url('../img/pickup-001.jpg');
+    background-image: url('../img/white-car-side-view-crop.jpg');
     animation-delay: 12s;
 }
 .cb-slideshow li:nth-child(4) span {
-    background-image: url('../img/gray-car-003.png');
+    background-image: url('../img/black-car-graffiti-wall-crop.jpg');
     animation-delay: 18s;
   }
 
@@ -773,29 +755,6 @@ header .ant-header {
   align-self: flex-start;
   z-index: 2;
 }
-/*.header-divider {
-  background: #3a3a3a;
-  width: 100%;
-  height: 1px;
-  margin: 10px 0 20px 0;
-}*/
-
-/*header nav {
-  width: 60%;
-  font-size: 1.125em;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-flow: row wrap;
-}
-
-header nav ul {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}*/
 
 /* Hero Area */
 
@@ -832,7 +791,7 @@ footer {
   flex-direction: column;
 }
 
-.footer-column-one, .footer-column-two, .footer-column-three, .footer-hours, .footer-address {
+.footer-column-one, .footer-column-two, .footer-column-three, .footer-hours, .footer-address, .logo-contact-name {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -842,6 +801,17 @@ footer {
 footer .content-wrapper {
   width: 85%;
   padding-top: 4.375em;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#services-page-footer #bbb-logo {
 }
 
 .ant-logo-footer {
@@ -895,30 +865,13 @@ footer .social-icons, footer .services-social-icons {
   width: 100%;
 }
 
-/*footer .social-icons p {
-  background-color: #fff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }*/
-
 footer .social-icons a, footer .services-social-icons a {
   font-size: 3em;
   color: #FB0404;
 }
 
-/*footer .footer-form {
-  order: 2;
-  display: block;
-  text-align: center;
-  width: 100%;
-}*/
-
 footer .footer-form {
-  order: 2;
+  order: 3;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -931,6 +884,7 @@ footer .footer-form {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -938,18 +892,29 @@ footer .footer-form {
   margin-bottom: 0.91em;
 }
 
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .footer-form input, textarea {
   margin-bottom: 1.5625em;
   font-size: 1em;
 }
 
-footer input[type=button] {
+footer input[type=button], .footer-form button {
   background-color: #FB0404;
   border: none;
   border-radius: 0;
 	color: #000;
 	line-height: 1;
-  min-width: 40%;
+  min-width: 37%;
   font-size: 1em;
   font-weight: bold;
   width: 50%;
@@ -980,12 +945,16 @@ footer h5 {
   margin: 0;
 }
 
+#bbb-logo {
+  margin: 1em auto 4em auto;
+}
+
 /*--------------- Mobile styles - Homepage ---------------*/
 
 /* Mission Area */
 
 
-.mission-area {
+.mission-area, .about-faq-page, .contact-us-page {
   background-color: #000000;
   display: flex;
   align-items: center;
@@ -1004,7 +973,7 @@ footer h5 {
   font-size: 1em;
 }
 
-.mission-area h3 {
+.mission-area h3, .about-faq-page h3, .contact-us-page h3 {
   text-align: center;
   text-transform: uppercase;
   width: 75%;
@@ -1385,12 +1354,7 @@ aside .alt-button input {
   margin-left: -100%;
   transform: translateX(100%);
   opacity:0;
-  animation: xfade 20s linear infinite;
-}
-
-.css-slideshow img {
-  width: 100%;
-  height: auto;
+  animation: xfade 25s linear infinite;
 }
 
 #logo-slide {
@@ -1410,6 +1374,10 @@ figure:nth-child(4) {
   animation-delay: 15s;
 }
 
+figure:nth-child(5) {
+  animation-delay: 20s;
+}
+
 @keyframes xfade {
   0%{
     opacity: 0;
@@ -1420,7 +1388,7 @@ figure:nth-child(4) {
   26%{
     opacity: 1;
   }
-  36% {
+  39% {
     opacity: 0;
   }
   100% {
@@ -1446,9 +1414,9 @@ figure:nth-child(4) {
        rgba(0, 0, 0, 0.6),
        rgba(0, 0, 0, 0.6)
        ),
-       url('../img/engine-002.jpg')center no-repeat;
+       url('../img/cobalt-car-side-view-rotated.jpg')center no-repeat;
      background-size: cover;
-     background-position: 53% 33%;
+     background-position: 55% 0%;
      min-height: 667px;
      display: flex;
      align-items: center;
@@ -1516,8 +1484,20 @@ figure:nth-child(4) {
     display: block;
   }
 
-  #image-position-top-left img {
-    object-position: left top;
+  #service-package-1-image-position img {
+    object-position: 43% 0%;
+  }
+
+  #service-package-3-image-position img {
+    object-position: 75% 0%;
+  }
+
+  #service-package-4-image-position img {
+    object-position: 10% 0%;
+  }
+
+  #service-package-5-image-position img {
+    object-position: 73% 0%;
   }
 
   .services-text {
@@ -1588,9 +1568,72 @@ figure:nth-child(4) {
     padding-bottom: 0;
   }
 
+  #bbb-logo-subpage {
+    margin: 2em auto 0 auto;
+    order: 3;
+  }
+
+
 /* ==========================================================================
-   FAQ Page
+   About Page
    ========================================================================== */
+
+   #about-page-container {
+        width: 100%;
+        height: auto;
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.6)
+          ),
+          url('../img/garage-003-crop.jpg')center no-repeat;
+          background-size: cover;
+          background-position: 80% 0%;
+          min-height: 667px;
+          display: flex;
+          align-items: center;
+          flex-flow: column wrap;
+          justify-content: space-between;
+          padding: 1.25em 2.5em;
+          overflow-x: hidden;
+        }
+
+        .hero-area-about-page {
+          display: flex;
+          flex-flow: row wrap;
+          width: 100%;
+          justify-content: center;
+          margin: 1em auto 15em auto;
+          order: 3;
+        }
+
+        .hero-area-about-page h1 {
+          padding-left: .5em;
+        }
+
+        /* ==========================================================================
+           About Page
+           ========================================================================== */
+
+           #contact-page-container {
+                width: 100%;
+                height: auto;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.6),
+                  rgba(0, 0, 0, 0.6),
+                  rgba(0, 0, 0, 0.6)
+                  ),
+                  url('../img/white-mercedes-front-crop.jpg')center no-repeat;
+                  background-size: cover;
+                  background-position: center;
+                  min-height: 667px;
+                  display: flex;
+                  align-items: flex-start;
+                  flex-flow: column wrap;
+                  justify-content: space-between;
+                  padding: 1.25em 2.5em;
+                  overflow-x: hidden;
+                }
 
 
 /* ==========================================================================
@@ -1694,6 +1737,12 @@ input[type=button] {
   margin: 4.2em 0;
 }
 
+.footer-form button {
+ font-size: 14px;
+ font-size: 0.875em;
+ padding: 2.25em 0;
+}
+
 /* Header */
 
 .container {
@@ -1777,7 +1826,7 @@ header .site-title {
   width: 33%;
 }
 
-.mission-area h3 {
+.mission-area h3, .about-faq-page h3, .contact-us-page h3 {
   width: 80%;
 }
 
@@ -1986,6 +2035,10 @@ footer .content-wrapper {
   justify-content: flex-start;
 }
 
+#bbb-logo {
+  margin: 0 auto 2em auto;
+}
+
 .footer-column-three {
   flex-basis: 80%;
 }
@@ -2021,12 +2074,12 @@ footer .footer-form {
 }
 
 textarea {
-  width: 55%;
+  width: 60%;
   display: flex;
   justify-content: flex-start;
 }
 
-footer input[type=button] {
+footer input[type=button], .footer-form button {
   width: 30%;
   margin-left: auto;
 }
@@ -2040,9 +2093,9 @@ footer input[type=button] {
    Services Page
    ========================================================================== */
 
-   #services-page-container {
-     min-height: 1022px;
-     padding: 1.25em 4em;
+   #services-page-container, #about-page-container, #contact-page-container {
+     min-height: 1024px;
+     padding: 2.5em 4em 1.25em 4em;
    }
 
    #service-packages-services-page .content-wrapper {
@@ -2145,6 +2198,14 @@ footer input[type=button] {
    About Page
    ========================================================================== */
 
+   .hero-area-about-page {
+     margin-bottom: 26em;
+   }
+
+   .hero-area-about-page h1 {
+     padding-left: 1em;
+   }
+
 
 /* ==========================================================================
     FAQ Page
@@ -2223,6 +2284,7 @@ ul {
   background-size: 150%;
   background-position: 38% 3%;
   min-height: auto;
+  padding: 2.5em 5em;
 }
 
 .cb-slideshow,
@@ -2521,6 +2583,15 @@ footer h4, .footer-hours h4, .footer-form input, textarea  {
   margin-bottom: 0;
 }
 
+#bbb-logo {
+  margin: 3em auto 0 0;
+}
+
+footer .footer-form {
+  order: 1;
+  margin-bottom: 2em;
+}
+
 .ten-percent-off {
   order: 2;
   margin: 2em auto .75em auto;
@@ -2540,7 +2611,7 @@ footer .footer-form {
   width: 100%;
 }
 
-footer input[type=button] {
+footer input[type=button], .footer-form button {
   font-size: .66em;
 }
 
@@ -2555,7 +2626,7 @@ footer h5 {
    Services Page
    ========================================================================== */
 
-   #services-page-container {
+   #services-page-container, #about-page-container, #contact-page-container {
      padding: 2.5em 5em;
      min-height: 871px;
    }
@@ -2675,12 +2746,18 @@ footer h5 {
      margin-top: 0;
    }
 
+   #bbb-logo-subpage {
+     margin: 3em auto 0 auto;
+   }
+
 
 /* ==========================================================================
-   FAQ Page
+   About Page
    ========================================================================== */
 
-
+   .hero-area-about-page {
+     margin-bottom: 20em;
+   }
 
 
 }

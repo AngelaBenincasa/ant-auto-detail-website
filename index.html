@@ -52,7 +52,7 @@
         </figure>
 
         <figure class="ant-logo-main">
-          <img src="img/ant-logo-clipped.png" alt="ANT Auto Detail logo">
+          <a href="#"><img src="img/ant-logo-clipped.png" alt="ANT Auto Detail logo"></a>
         </figure>
       </div>
 
@@ -75,7 +75,7 @@
       <div class="content-wrapper">
         <h3>Treat Your Car<br>To A Spa Day</h3>
         <div class="ant-button">
-          <a href="#service-packages">VIEW OUR SERVICES</a>
+          <a href="services/index.html">VIEW OUR SERVICES</a>
         </div>
       </div>
     </section>
@@ -224,16 +224,19 @@
   <!-- Add slideshow code here -->
   <section class="slideshow">
       <!--image slider start-->
-      <div class="css-slideshow">
+      <div class="css-slideshow" id="css-slideshow">
           <!--slide images start-->
           <figure class="fade-in-image">
-            <img src="img/pickup-001.jpg" alt="Red Pickup Truck Side View">
+            <img src="img/white-car-tire-zoom.jpg" alt="White Car In Shop Tire Zoom">
           </figure>
           <figure class="fade-in-image">
-            <img src="img/engine-001.jpg" alt="Interior Engine View">
+            <img src="img/gunmetal-suv-drivers-side-crop.jpg" alt="Gunmetal SUV in Shop Drivers Side View">
           </figure>
           <figure class="fade-in-image">
-            <img src="img/black-car-002.jpg" alt="Black Car Doors Open">
+            <img src="img/black-car-in-progress.jpg" alt="Black Car Being Serviced">
+          </figure>
+          <figure class="fade-in-image">
+            <img src="img/black-suv-side-view.jpg" alt="Black SUV Side View">
           </figure>
           <figure class="fade-in-image" id="logo-slide">
             <img src="img/logo-slide.png" alt="A Nice Touch Logo Slide">
@@ -381,8 +384,8 @@
    <div class="content-wrapper">
       <div class="footer-content">
 
-        <div class="footer-column-one"
-          <address class="logo-contact-name">
+        <div class="footer-column-one">
+          <div class="footer-logo">
             <figure class="ant-logo-footer">
               <a href="#"><img src="img/ant-logo.png" alt="ANT Auto Detail logo"></a>
             </figure>
@@ -394,7 +397,7 @@
             203-668-8164<br>
             antdetail@gmail.com
           </h4>
-          </address>
+        </div>
         </div>
 
         <div class="footer-column-two">
@@ -415,18 +418,26 @@
             Sunday: Closed
           </h4>
           </div>
+
+          <div id="bbb-logo">
+              <a href="https://www.bbb.org/us/ct/north-haven/profile/auto-detailing/a-nice-touch-auto-detailing-0111-87147204/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-ct.bbb.org/seals/black-seal-187-130-whitetxt-bbb-87147204.png" style="border: 0;" alt="A Nice Touch Auto Detailing BBB Business Review" /></a>
+          </div>
         </div>
 
       <div class="footer-column-three">
         <div class="footer-form">
           <h3>Contact</h3>
-          <form>
-            <input type="text" name="name" value="Name"><br>
-            <input type="email" name="email" value="Email Address"><br>
+          <form action="/my-handling-form-page" method="post">
+            <label for="name" class="visuallyhidden">Name</label>
+            <input type="text" id="name" name="name" value="Name"><br>
+            <label for="email" class="visuallyhidden">Email</label>
+            <input type="email" id="email" name="email" value="Email Address"><br>
+            <label for="message" class="visuallyhidden">Message</label>
             <textarea id="message" name="message" rows="4" cols="10">Message</textarea>
             <!-- Add reCaptcha code here -->
             <!--<input type="submit" value="Submit">-->
-            <input type="button" value="Submit">
+            <button type="submit">Submit</button>
+            <!--<input type="button" value="Submit">-->
           </form>
         </div>
         <div class="social-icons">
@@ -441,8 +452,8 @@
           </p>
         </div>
         <p class="ten-percent-off">Get 10% off your next service by writing a review!</p>
-      </div>
 
+      </div>
     </div> <!-- footer content ends -->
   </div> <!-- footer content-wrapper ends -->
   <div class="copyright-divider"></div>
