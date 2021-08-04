@@ -2423,6 +2423,10 @@ input[type=button] {
   overflow: hidden;
 }
 
+.css-slideshow figure {
+  transform: translate3d(100%, -10%, 0);
+}
+
 #logo-slide {
   transform: translate3d(100%, -14%, 0);
 }
