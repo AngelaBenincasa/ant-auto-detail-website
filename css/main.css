@@ -1335,7 +1335,7 @@ aside .alt-button input {
 .css-slideshow {
   position: relative;
   max-width: 80%;
-  max-height: 200px;
+  max-height: 175px;
   overflow: hidden;
   margin: 1.5625em auto 0 auto;
 }
@@ -1352,9 +1352,10 @@ aside .alt-button input {
   background: #000;
   float: left;
   margin-left: -100%;
-  transform: translateX(100%);
+  transform: translate3d(100%, -10%, 0);
   opacity:0;
   animation: xfade 25s linear infinite;
+}
 }
 
 #logo-slide {
@@ -1890,13 +1891,17 @@ header .site-title {
 
 .css-slideshow {
   max-width: 80%;
-  max-height: 400px;
+  max-height: 350px;
   overflow: hidden;
   margin: 6.5625em auto 4em auto;
 }
 
+.css-slideshow figure {
+  transform: translate3d(100%, -8%, 0);
+}
+
 #logo-slide {
-  transform: translate3d(100%, -4%, 0);
+  transform: translate3d(100%, -11%, 0);
 }
 
 /* Our Story */
@@ -2228,7 +2233,7 @@ footer input[type=button], .footer-form button {
 }
 
 #logo-slide {
-  transform: translate3d(100%, -12%, 0);
+  transform: translate3d(100%, -9%, 0);
 }
 
 /* Slides */
