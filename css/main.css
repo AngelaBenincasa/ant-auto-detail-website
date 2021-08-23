@@ -324,6 +324,7 @@ a {
   background-color: transparent;
   color: #fff;
   display: flex;
+  justify-content: center;
   line-height: 1.75;
   padding: 1.25em 1.875em 1.25em 1.875em;
   margin: 3.6em 0;
@@ -1011,12 +1012,15 @@ footer h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: row wrap;
   margin-top: 1.75em;
 }
 
 .homepage-center-image img {
-    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    width: auto;
+    min-height: 200px;
+    display: block;
 }
 
 /* Service Packages */
@@ -2195,6 +2199,11 @@ footer input[type=button], .footer-form button {
 
    #packages-summaries-services-page .services-text h3, #packages-summaries-services-page .services-text h5 {
      text-align: center;
+   }
+
+   #packages-summaries-services-page .services-text h3 {
+     margin-left: auto;
+     margin-right: auto;
    }
 
 
